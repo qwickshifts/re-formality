@@ -1,5 +1,4 @@
 open Ppxlib;
-open Ast_helper;
 
 let str = (~loc, x: string) => {txt: x, loc};
 let lid = (~loc, x: Longident.t) => {txt: x, loc};

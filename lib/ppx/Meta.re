@@ -3,7 +3,9 @@ open Ast;
 open Ppxlib;
 
 module ItemType = {
-  module T: {type t;} = {
+  module T: {
+    type t;
+  } = {
     type t = core_type;
   };
 
@@ -219,7 +221,9 @@ module OutputField = {
 };
 
 module InputType = {
-  module T: {type t;} = {
+  module T: {
+    type t;
+  } = {
     type t = type_declaration;
   };
 
@@ -229,7 +233,9 @@ module InputType = {
 };
 
 module OutputType = {
-  module T: {type t;} = {
+  module T: {
+    type t;
+  } = {
     type t = type_declaration;
   };
 
@@ -429,7 +435,7 @@ module FieldDepsParser = {
 };
 
 module FieldCollectionParser = {
-  type result = Pervasives.result(ok, error)
+  type result = Stdlib.result(ok, error)
   and ok = {
     collection: Collection.t,
     fields: list(InputFieldData.unvalidated),
@@ -530,7 +536,7 @@ module FieldCollectionParser = {
 };
 
 module FieldAttributesParser = {
-  type result = Pervasives.result(option(ok), error)
+  type result = Stdlib.result(option(ok), error)
   and ok =
     | Collection(FieldCollectionParser.ok)
     | AsyncDeps({
@@ -588,7 +594,7 @@ module FieldAttributesParser = {
 };
 
 module InputTypeParser = {
-  type result = Pervasives.result(ok, error)
+  type result = Stdlib.result(ok, error)
   and ok = {
     entries: list(unvalidated_entry),
     type_declaration: InputType.t,
@@ -654,7 +660,7 @@ module InputTypeParser = {
 
   let validate =
       (unvalidated_entries: list(unvalidated_entry))
-      : Pervasives.result(list(validated_entry), FieldDepsParser.error) => {
+      : Stdlib.result(list(validated_entry), FieldDepsParser.error) => {
     let dup = (deps: list(FieldDep.unvalidated), dep: FieldDep.unvalidated) =>
       switch (
         deps
@@ -688,8 +694,7 @@ module InputTypeParser = {
     unvalidated_entries
     |> List.fold_left(
          (
-           res:
-             Pervasives.result(list(validated_entry), FieldDepsParser.error),
+           res: Stdlib.result(list(validated_entry), FieldDepsParser.error),
            unvalidated_entry: unvalidated_entry,
          ) =>
            switch (res, unvalidated_entry) {
@@ -700,7 +705,7 @@ module InputTypeParser = {
                |> List.fold_left(
                     (
                       res:
-                        Pervasives.result(
+                        Stdlib.result(
                           list(FieldDep.t),
                           FieldDepsParser.error,
                         ),
@@ -718,7 +723,7 @@ module InputTypeParser = {
                                  (
                                    res:
                                      option(
-                                       Pervasives.result(
+                                       Stdlib.result(
                                          FieldDep.t,
                                          FieldDepsParser.error,
                                        ),
@@ -828,7 +833,7 @@ module InputTypeParser = {
                |> List.fold_left(
                     (
                       res:
-                        Pervasives.result(
+                        Stdlib.result(
                           list(InputFieldData.validated),
                           FieldDepsParser.error,
                         ),
@@ -842,7 +847,7 @@ module InputTypeParser = {
                           |> List.fold_left(
                                (
                                  res:
-                                   Pervasives.result(
+                                   Stdlib.result(
                                      list(FieldDep.t),
                                      FieldDepsParser.error,
                                    ),
@@ -861,7 +866,7 @@ module InputTypeParser = {
                                             (
                                               res:
                                                 option(
-                                                  Pervasives.result(
+                                                  Stdlib.result(
                                                     FieldDep.t,
                                                     FieldDepsParser.error,
                                                   ),
@@ -904,7 +909,7 @@ module InputTypeParser = {
                                                          (
                                                            res:
                                                              option(
-                                                               Pervasives.result(
+                                                               Stdlib.result(
                                                                  FieldDep.t,
                                                                  FieldDepsParser.error,
                                                                ),
@@ -1156,7 +1161,7 @@ module InputTypeParser = {
 };
 
 module OutputTypeParser = {
-  type result = Pervasives.result(ok, error)
+  type result = Stdlib.result(ok, error)
   and ok =
     | NotProvided
     | AliasOfInput
@@ -1363,7 +1368,7 @@ module DebounceIntervalParser = {
 };
 
 module ValidatorsRecordParser = {
-  type result = Pervasives.result(ValidatorsRecord.t, error)
+  type result = Stdlib.result(ValidatorsRecord.t, error)
   and error =
     | NotFound
     | NotRecord(Location.t)

@@ -17,6 +17,6 @@ module Make = (Form: Form) =>
     module FieldId =
       Id.MakeComparable({
         type t = Form.field;
-        let cmp = Pervasives.compare;
+        let cmp = Stdlib.compare;
       });
   });
