@@ -198,7 +198,8 @@ module Make = (Form: Form) => {
                     input,
                     fields: fields->Map.set(field, Validating),
                   },
-                  ({dispatch}) => validateAsync((field, input, dispatch)),
+                  ({dispatch, _}) =>
+                    validateAsync((field, input, dispatch)),
                 )
               | (Ok(NoValue) | Error(_), Some(_)) =>
                 Update({
@@ -230,7 +231,8 @@ module Make = (Form: Form) => {
                     input,
                     fields: fields->Map.set(field, Validating),
                   },
-                  ({dispatch}) => validateAsync((field, input, dispatch)),
+                  ({dispatch, _}) =>
+                    validateAsync((field, input, dispatch)),
                 )
               | (Ok(NoValue), Some(_)) =>
                 Update({
@@ -292,7 +294,7 @@ module Make = (Form: Form) => {
                     ...state,
                     fields: state.fields->Map.set(field, Validating),
                   },
-                  ({dispatch}) =>
+                  ({dispatch, _}) =>
                     validateAsync((field, state.input, dispatch)),
                 )
               | (Ok(NoValue) | Error(_), Some(_)) =>

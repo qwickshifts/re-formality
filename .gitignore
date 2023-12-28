@@ -13,3 +13,4 @@ re-formality-ppx.install
 lib/test/**/*.cm[itj]
 _build
 _opam
+.vscode

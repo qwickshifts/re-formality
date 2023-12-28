@@ -248,7 +248,7 @@ module Make = (Form: Form) => {
                     ...state,
                     fields: state.fields->Map.set(field, Validating),
                   },
-                  ({dispatch}) =>
+                  ({dispatch, _}) =>
                     Js.Promise.(
                       state.input
                       ->validateAsync
