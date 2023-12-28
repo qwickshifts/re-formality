@@ -8,6 +8,10 @@
     "type": "git",
     "url": "https://github.com/MinimaHQ/re-formality.git"
   },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "workspaces": [
     "lib",
     "specs",

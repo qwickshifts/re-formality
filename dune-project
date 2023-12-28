@@ -4,7 +4,7 @@
 
 (generate_opam_files)
 
-(name re-formality-ppx)
+(name re-formality)
 
 (source
  (github shakacode/re-formality))
@@ -20,7 +20,7 @@
 (bug_reports https://github.com/shakacode/re-formality/issues)
 
 (package
- (name re-formality-ppx)
+ (name re-formality)
  (synopsis "Form validation tool for reason-react")
  (description "Form validation tool for reason-react")
  (depends
@@ -35,4 +35,6 @@
   ocamlformat
   opam-check-npm-deps
   alcotest
+  reason-react
+  re-debouncer
   ppxlib))

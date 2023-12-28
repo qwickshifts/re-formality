@@ -17,6 +17,8 @@ depends: [
   "ocamlformat"
   "opam-check-npm-deps"
   "alcotest"
+  "reason-react"
+  "re-debouncer"
   "ppxlib"
   "odoc" {with-doc}
 ]
@@ -35,3 +37,6 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/shakacode/re-formality.git"
+pin-depends: [
+  "re-debouncer.dev" "git+https://github.com/riKiMasan/rescript-debounce.git#melange"
+]
