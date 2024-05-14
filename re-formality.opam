@@ -10,7 +10,7 @@ bug-reports: "https://github.com/shakacode/re-formality/issues"
 depends: [
   "dune" {>= "3.12"}
   "dot-merlin-reader"
-  "melange" {>= "2.0.0"}
+  "melange" {>= "3.0.0" & < "4.0.0"}
   "ocaml" {>= "5.1.0"}
   "reason" {>= "3.10.0"}
   "ocaml-lsp-server"
@@ -38,7 +38,5 @@ build: [
 ]
 dev-repo: "git+https://github.com/shakacode/re-formality.git"
 pin-depends: [
-  ["re-debouncer.dev" "git+https://github.com/riKiMasan/rescript-debounce.git#melange"]
-  [ "reason-react.dev" "git+https://github.com/reasonml/reason-react.git#main" ] 
-  [ "reason-react-ppx.dev" "git+https://github.com/reasonml/reason-react.git#main" ] 
+  ["re-debouncer.dev" "git+https://github.com/qwickshifts/rescript-debounce.git#melange3"]
 ]

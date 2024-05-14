@@ -4821,6 +4821,13 @@ re-debouncer@2.1.0:
   resolved "https://registry.yarnpkg.com/re-debouncer/-/re-debouncer-2.1.0.tgz#2eaf7994ba41590f4f80d4a363ae8905156b7dc1"
   integrity sha512-Iy9BecWF9X4V6zXfL3ROZpKGkCnpzYdjG/j6NIBxQn7gEwO2DzED5BsbfRUiPeqr7C0tAD0HPHF6tYIcQFEnyA==
 
+re-formality@*:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/re-formality/-/re-formality-3.2.0.tgz#e0ab4a6b5c9aed45ac139588056a0fff75c02edb"
+  integrity sha512-UN3/higTznfNJcR/yizp6rjyBTf7RvDF4PbaO2dWucBhNL3K/c5qcHmD6fux8HQqNhYuN+q/RjgbghqfOIQuCw==
+  dependencies:
+    re-debouncer "2.1.0"
+
 react-dom@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"

@@ -1,7 +1,7 @@
 (library
  (name Reformality)
  (public_name re-formality)
- (libraries reason-react re-debouncer)
+ (libraries reason-react re-debouncer melange.belt)
  (melange.compile_flags -open ReDebouncer -open Belt)
  (modes melange)
  (preprocess

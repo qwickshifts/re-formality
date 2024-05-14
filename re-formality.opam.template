@@ -1,5 +1,3 @@
 pin-depends: [
-  ["re-debouncer.dev" "git+https://github.com/riKiMasan/rescript-debounce.git#melange"]
-  [ "reason-react.dev" "git+https://github.com/reasonml/reason-react.git#main" ] 
-  [ "reason-react-ppx.dev" "git+https://github.com/reasonml/reason-react.git#main" ] 
+  ["re-debouncer.dev" "git+https://github.com/qwickshifts/rescript-debounce.git#melange3"]
 ]

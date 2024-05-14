@@ -20,7 +20,7 @@ nuke: ## Delete all artifacts including the local switch
 	
 .PHONY: create-switch
 create-switch: ## Create opam switch
-	opam switch create . -y --deps-only --no-install --packages=ocaml.5.1.0,dune
+	opam switch create . -y --deps-only --no-install --packages=dune,ocamlformat,ocaml-lsp-server,ocaml-base-compiler
 
 .PHONY: init
 init: create-switch install ## Configure everything to develop this repository in local
