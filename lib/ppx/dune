@@ -1,6 +1,6 @@
 (library
  (name Ppx)
- (public_name re-formality.ppx.lib)
+ (public_name re-formality.ppx)
  (kind ppx_rewriter)
  (libraries ppxlib melange.belt)
  (flags
