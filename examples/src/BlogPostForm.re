@@ -21,7 +21,7 @@ module BlogPostForm = [%form
       validate: ({category}, metadata) => {
         switch (category) {
         | "" => Error("Category is required")
-        | _ when !metadata.categories->Js.Array2.includes(category) =>
+        | _ when !metadata.categories->Js.Array.includes(~value=category) =>
           Error("Invalid category")
         | _ => Ok(category)
         };
@@ -41,7 +41,7 @@ module BlogPostForm = [%form
             | {name: ""} => Error("Author name is required")
             | {name}
                 when
-                  authors->Js.Array2.somei((author, idx) =>
+                  authors->Js.Array.somei(~f=(author, idx) =>
                     if (at == idx) {
                       false;
                     } else {

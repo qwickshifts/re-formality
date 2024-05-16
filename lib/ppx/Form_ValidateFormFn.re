@@ -546,8 +546,8 @@ let validate_fields_of_collection_in_sync_form =
       [%expr
         {
           ignore(
-            Js.Array2.push(
-              output,
+            Js.Array.push(
+              ~value=output,
               [%e
                 Exp.record(
                   fields
@@ -559,8 +559,8 @@ let validate_fields_of_collection_in_sync_form =
             ),
           );
           ignore(
-            Js.Array2.push(
-              statuses,
+            Js.Array.push(
+              ~value=statuses,
               [%e
                 Exp.record(
                   fields
@@ -587,8 +587,8 @@ let validate_fields_of_collection_in_sync_form =
       [%expr
         {
           ignore(
-            Js.Array2.push(
-              statuses,
+            Js.Array.push(
+              ~value=statuses,
               [%e
                 Exp.record(
                   fields
@@ -726,8 +726,8 @@ let validate_fields_of_collection_in_async_form =
       [%expr
         {
           ignore(
-            Js.Array2.push(
-              statuses,
+            Js.Array.push(
+              ~value=statuses,
               [%e
                 Exp.record(
                   fields
@@ -769,8 +769,8 @@ let validate_fields_of_collection_in_async_form =
       [%expr
         {
           ignore(
-            Js.Array2.push(
-              output,
+            Js.Array.push(
+              ~value=output,
               [%e
                 Exp.record(
                   fields
@@ -782,8 +782,8 @@ let validate_fields_of_collection_in_async_form =
             ),
           );
           ignore(
-            Js.Array2.push(
-              statuses,
+            Js.Array.push(
+              ~value=statuses,
               [%e
                 Exp.record(
                   fields
@@ -810,8 +810,8 @@ let validate_fields_of_collection_in_async_form =
       [%expr
         {
           ignore(
-            Js.Array2.push(
-              statuses,
+            Js.Array.push(
+              ~value=statuses,
               [%e
                 Exp.record(
                   fields
